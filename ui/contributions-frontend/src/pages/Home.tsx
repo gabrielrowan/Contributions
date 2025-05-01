@@ -45,11 +45,14 @@ function Home() {
         e.preventDefault();
         if (!searchQuery.trim()) return
         if (loading) return
-
         setLoading(true)
 
+        setSkipNum(0);
+        setCurrentPage(1);
+
         try {
-            const searchResults = await searchContributions(searchQuery)
+            const [searchResults, total] = await searchContributions(searchQuery, skipNum)
+            setTotalPages(Math.ceil(total / 12))
             setContributions(searchResults)
             setError(null)
         } catch (err) {

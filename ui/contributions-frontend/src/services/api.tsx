@@ -7,8 +7,8 @@ export const getContributions = async (skip: number) => {
 
 }
 
-export const searchContributions = async (query: string) => {
-    const response = await fetch(`${BASE_URL}/contributions/?title=${encodeURIComponent(query)}`);
+export const searchContributions = async (query: string, skip: number) => {
+    const response = await fetch(`${BASE_URL}/contributions/?title=${encodeURIComponent(query)}&skip=${skip}&limit=14`);
     const data = await response.json();
-    return data.contributions;
+    return [data.contributions, data.total];
 }

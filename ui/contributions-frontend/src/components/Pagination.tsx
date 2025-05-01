@@ -13,7 +13,7 @@ function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) 
         pageNumbers.push(i);
     }
 
-    return (
+    return totalPages > 1 ? (
         <div className="pagination-section">
             {pageNumbers.map((pageNum) => (
                 <PaginationButton
@@ -23,7 +23,7 @@ function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) 
                     isActive={pageNum === currentPage}
                 />))}
         </div>
-    );
+    ) : null;
 }
 
 export default Pagination;
