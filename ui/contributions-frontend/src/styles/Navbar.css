@@ -10,7 +10,7 @@
 }
 
 .navbar-heading:hover {
-    color: #C80032;
+    color: var(--arqiva-red);
     cursor: pointer;
 
 }

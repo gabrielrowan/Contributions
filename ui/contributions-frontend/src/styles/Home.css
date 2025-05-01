@@ -8,7 +8,7 @@
 .search-section {
     display: grid;
     justify-content: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
 }
 
 .search-button {
@@ -21,11 +21,15 @@
     font-size: 1rem;
 }
 
-.search-form input {
+.search-input {
     height: 1.9rem;
     font-size: 1rem;
-    width: 20vw;
+    width: max(23vw, 17rem)
+}
 
+.search-button {
+    width: 4.5rem;
+    height: 2rem;
 }
 
 /* For tablet */
@@ -42,4 +46,15 @@
         grid-template-columns: 1fr;
         margin: 2rem 1rem;
     }
+
+    .search-input {
+        margin-bottom: 0.5rem;
+        width: 88vw
+    }
+
+    .search-button {
+        margin-left: 0;
+        width: 90vw;
+    }
+
 }

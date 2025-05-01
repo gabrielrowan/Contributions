@@ -35,15 +35,16 @@
 }
 
 .contribution-status.scheduled {
-    background-color: #CEDFE4;
+    background-color: var(--arqiva-light-blue);
 }
 
 .contribution-status.active {
-    background-color: #C80032;
+    background-color: var(--arqiva-red);
+    color: white;
 }
 
 .contribution-status.complete {
-    background-color: #CEDFE4;
+    background-color: var(--grey);
 }
 
 .contribution-owner-status-section {

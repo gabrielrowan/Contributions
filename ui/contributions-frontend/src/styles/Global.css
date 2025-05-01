@@ -1,12 +1,19 @@
 @import url('https://fonts.cdnfonts.com/css/fsalbert');
 
+:root {
+    --arqiva-red: #C80032;
+    --arqiva-light-blue: #CEDFE4;
+    --grey: #C7C7CC;
+    --arqiva-font: 'FSAlbert';
+}
+
 body {
-    font-family: 'FSAlbert', sans-serif;
+    font-family: var(--arqiva-font), sans-serif;
     margin: 0;
     padding: 0;
 }
 
 input,
 button {
-    font-family: 'FSAlbert', sans-serif;
+    font-family: var(--arqiva-font), sans-serif;
 }
