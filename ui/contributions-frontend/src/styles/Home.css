@@ -1,5 +1,22 @@
 .contributions-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin: 2rem 7rem;
+}
+
+/* For tablet */
+@media (max-width: 1024px) {
+    .contributions-list {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 2rem 3rem;
+    }
+}
+
+/* For mobile */
+@media (max-width: 650px) {
+    .contributions-list {
+        grid-template-columns: 1fr;
+        margin: 2rem 1rem;
+    }
 }

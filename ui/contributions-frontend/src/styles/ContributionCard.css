@@ -8,6 +8,10 @@
     font-size: 1.5rem;
 }
 
+.contribution-description {
+    font-size: 0.95rem;
+}
+
 .contribution-owner {
     background-color: black;
     color: white;
