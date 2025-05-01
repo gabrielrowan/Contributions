@@ -1,0 +1,7 @@
+.pagination-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2rem, auto));
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}

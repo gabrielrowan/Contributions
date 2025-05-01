@@ -1,7 +1,7 @@
 import "../styles/ContributionCard.css"
 import "../styles/Global.css"
 
-type Contribution = {
+export type Contribution = {
     id: number;
     title: string;
     description: string;

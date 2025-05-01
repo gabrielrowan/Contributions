@@ -1,10 +1,12 @@
 import ContributionCard from "../components/ContributionCard";
 import { getContributions, searchContributions } from "../services/api";
 import { useEffect, useState } from "react";
-import { Contribution } from "../types/types";
+import { Contribution } from "../components/ContributionCard";
+import Pagination from "../components/Pagination";
 import NavBar from "../components/Navbar";
 import "../styles/Home.css"
 import "../styles/Global.css"
+
 
 
 function Home() {
@@ -12,10 +14,15 @@ function Home() {
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
     const [searchQuery, setSearchQuery] = useState("");
+    const [skipNum, setSkipNum] = useState(0);
+    const [currentPageNum, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
 
     const loadContributions = async () => {
         try {
-            setContributions(await getContributions());
+            const [contributions, total] = await getContributions(skipNum);
+            setContributions(contributions);
+            setTotalPages(Math.ceil(total / 12))
         } catch (err) {
             console.log(err)
             setError("Failed to load contributions")
@@ -87,6 +94,8 @@ function Home() {
             </div>
 
             {content}
+
+            <Pagination totalPages={totalPages} />
 
         </div>
     )
