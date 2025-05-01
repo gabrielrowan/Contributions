@@ -18,16 +18,13 @@ type ContributionCardProps = {
 
 function ContributionCard({ contribution }: ContributionCardProps) {
 
-    const formatter = new Intl.DateTimeFormat(undefined, {
-        dateStyle: "medium",
-        timeStyle: "short",
-    });
 
     const startDateTime = new Date(contribution.startTime)
     const endDateTime = new Date(contribution.endTime)
-    const formattedStart = formatter.format(startDateTime);
-    const formattedEnd = formatter.format(endDateTime);
+    const formattedStart = startDateTime.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    const formattedEnd = endDateTime.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
     const curentDateTime = new Date();
+    const endTime = endDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     let status = "";
 
@@ -46,8 +43,15 @@ function ContributionCard({ contribution }: ContributionCardProps) {
                 <h3 className="contribution-title">{contribution.title}</h3>
             </div>
             <p className="contribution-description">{contribution.description}</p>
-            <p className="contribution-date">{formattedStart}</p>
-            <p className="contribution-time">{formattedEnd}</p>
+            <div className="contribution-datetime-range">
+                {
+
+                    startDateTime.toDateString() === endDateTime.toDateString() ?
+                        <p className="contribution-date">{formattedStart} - {endTime}</p> :
+                        <p className="contribution-date">{formattedStart} - {formattedEnd}</p>
+
+                }
+            </div>
             <div className="contribution-owner-status-section">
                 <span className="contribution-owner pill">{contribution.owner}</span>
                 <span className={`contribution-status ${status.toLowerCase()} pill`}>{status}</span>
