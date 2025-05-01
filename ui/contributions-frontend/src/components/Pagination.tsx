@@ -5,15 +5,16 @@ type PaginationProps = {
     totalPages: number;
     currentPage: number;
     onPageChange: (pageNum: number) => void;
+    loading: boolean;
 };
 
-function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) {
+function Pagination({ totalPages, currentPage, onPageChange, loading }: PaginationProps) {
     const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
     }
 
-    return totalPages > 1 ? (
+    return totalPages > 1 && loading !== true ? (
         <div className="pagination-section">
             {pageNumbers.map((pageNum) => (
                 <PaginationButton

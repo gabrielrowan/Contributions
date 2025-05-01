@@ -106,7 +106,7 @@ function Home() {
 
             {content}
 
-            <Pagination totalPages={totalPages} currentPage={currentPageNum} onPageChange={handlePageChange} />
+            <Pagination totalPages={totalPages} currentPage={currentPageNum} onPageChange={handlePageChange} loading={loading} />
 
         </div>
     )

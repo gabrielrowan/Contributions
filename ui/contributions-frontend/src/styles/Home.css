@@ -32,7 +32,6 @@
 .loading-section {
     display: grid;
     justify-content: center;
-    font-weight: 400;
 }
 
 .no-results-section {
@@ -42,6 +41,7 @@
 
 .loading-text {
     font-weight: 400;
+    color: var(--light-grey);
 }
 
 .no-results-text {
