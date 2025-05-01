@@ -35,18 +35,14 @@ function Home() {
         setSearchQuery("");
         setLoading(true);
         loadContributions();
+        setSkipNum(0);
+        setCurrentPage(1)
     };
 
     useEffect(() => {
         loadContributions();
     }, [skipNum]);
 
-    useEffect(() => {
-        if (searchQuery.trim()) {
-            setSkipNum(0);
-            setCurrentPage(1);
-        }
-    }, [searchQuery]);
 
     const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -54,6 +50,7 @@ function Home() {
         if (loading) return
 
         setLoading(true)
+        setCurrentPage(1)
 
         try {
             const [searchResults, total] = await searchContributions(searchQuery, skipNum)
