@@ -1,5 +1,5 @@
 import ContributionCard from "../components/ContributionCard";
-import { getContributions } from "../services/api";
+import { getContributions, searchContributions } from "../services/api";
 import { useEffect, useState } from "react";
 import { Contribution } from "../types/types";
 import "../styles/Home.css"
@@ -10,6 +10,7 @@ function Home() {
     const [contributions, setContributions] = useState<Contribution[]>([]);
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
+    const [searchQuery, setSearchQuery] = useState("");
 
 
     useEffect(() => {
@@ -27,8 +28,42 @@ function Home() {
         loadContributions();
     }, []);
 
+    const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!searchQuery.trim()) return
+        if (loading) return
+
+        setLoading(true)
+
+        try {
+            const searchResults = await searchContributions(searchQuery)
+            setContributions(searchResults)
+            setError(null)
+        } catch (err) {
+            console.log(err)
+            setError("Failed to search contributions...")
+        } finally {
+            setLoading(false)
+        }
+    };
+
     return (
         <div className="home">
+            <div className="search-section">
+                <form onSubmit={handleSearch} className="search-form">
+                    <input
+                        type="text"
+                        placeholder="Search by title..."
+                        className="search-input"
+                        value={searchQuery}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+                    />
+                    <button type="submit" className="search-button">
+                        Search
+                    </button>
+                </form>
+            </div>
+
             {loading ? (
                 <div className="loading">Loading...</div>
             ) : (
@@ -41,5 +76,6 @@ function Home() {
         </div>
     )
 }
+
 
 export default Home;

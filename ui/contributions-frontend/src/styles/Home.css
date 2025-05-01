@@ -5,6 +5,29 @@
     margin: 2rem 7rem;
 }
 
+.search-section {
+    display: grid;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+
+.search-button {
+    background-color: black;
+    color: white;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    height: 2rem;
+    width: 4.2rem;
+    font-size: 1rem;
+}
+
+.search-form input {
+    height: 1.9rem;
+    font-size: 1rem;
+    width: 20vw;
+
+}
+
 /* For tablet */
 @media (max-width: 1024px) {
     .contributions-list {

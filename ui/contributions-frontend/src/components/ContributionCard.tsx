@@ -31,18 +31,20 @@ function ContributionCard({ contribution }: Props) {
     }
 
 
-    return <div className="contribution-card">
-        <div className="contribution-title-section">
-            <h3 className="contribution-title">{contribution.title}</h3>
+    return (
+        <div className="contribution-card">
+            <div className="contribution-title-section">
+                <h3 className="contribution-title">{contribution.title}</h3>
+            </div>
+            <p className="contribution-description">{contribution.description}</p>
+            <p className="contribution-date">{formattedStart}</p>
+            <p className="contribution-time">{formattedEnd}</p>
+            <div className="contribution-owner-status-section">
+                <span className="contribution-owner pill">{contribution.owner}</span>
+                <span className={`contribution-status ${status.toLowerCase()} pill`}>{status}</span>
+            </div>
         </div>
-        <p className="contribution-description">{contribution.description}</p>
-        <p className="contribution-date">{formattedStart}</p>
-        <p className="contribution-time">{formattedEnd}</p>
-        <div className="contribution-owner-status-section">
-            <span className="contribution-owner pill">{contribution.owner}</span>
-            <span className={`contribution-status ${status.toLowerCase()} pill`}>{status}</span>
-        </div>
-    </div>
+    )
 }
 
 export default ContributionCard
