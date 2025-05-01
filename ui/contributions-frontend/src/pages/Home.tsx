@@ -39,7 +39,7 @@ function Home() {
 
     useEffect(() => {
         loadContributions();
-    }, []);
+    }, [skipNum]);
 
     const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -58,6 +58,12 @@ function Home() {
         } finally {
             setLoading(false)
         }
+    };
+
+    const handlePageChange = (pageNum: number) => {
+        setCurrentPage(pageNum);
+        setSkipNum((pageNum - 1) * 12);
+        setLoading(true);
     };
 
     let content;
@@ -95,7 +101,7 @@ function Home() {
 
             {content}
 
-            <Pagination totalPages={totalPages} />
+            <Pagination totalPages={totalPages} currentPage={currentPageNum} onPageChange={handlePageChange} />
 
         </div>
     )

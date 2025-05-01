@@ -6,3 +6,9 @@
     height: 2rem;
     width: 2rem;
 }
+
+.page-button.active {
+    background-color: var(--arqiva-red);
+    color: white;
+    font-weight: 800;
+}
