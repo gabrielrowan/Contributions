@@ -13,7 +13,7 @@
 }
 
 .contribution-owner {
-    background-color: black;
+    background-color: var(--arqiva-dark-blue);
     color: white;
     padding: 0.45rem;
     border-radius: 40px;

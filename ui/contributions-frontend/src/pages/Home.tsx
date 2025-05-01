@@ -53,6 +53,21 @@ function Home() {
         }
     };
 
+    let content;
+    if (loading) {
+        content = <div className="loading-section"><h3 className="loading-text">Loading...</h3></div>;
+    } else if (contributions.length === 0) {
+        content = <div className="no-results-section"><h3 className="no-results-text">No results found</h3></div>;
+    } else {
+        content = (
+            <div className="contributions-list">
+                {contributions.map((contribution) => (
+                    <ContributionCard contribution={contribution} key={contribution.id} />
+                ))}
+            </div>
+        );
+    }
+
     return (
         <div className="home">
             <NavBar onReset={handleReset} />
@@ -71,15 +86,8 @@ function Home() {
                 </form>
             </div>
 
-            {loading ? (
-                <div className="loading">Loading...</div>
-            ) : (
-                <div className="contributions-list">
-                    {contributions.map((contribution) => (
-                        <ContributionCard contribution={contribution} key={contribution.id} />
-                    ))}
-                </div>
-            )}
+            {content}
+
         </div>
     )
 }
