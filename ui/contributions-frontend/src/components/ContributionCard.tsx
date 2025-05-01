@@ -1,13 +1,22 @@
-import { Contribution } from "../types/types";
 import "../styles/ContributionCard.css"
 import "../styles/Global.css"
 
-type Props = {
+type Contribution = {
+    id: number;
+    title: string;
+    description: string;
+    startTime: string;
+    endTime: string;
+    owner: string;
+};
+
+
+type ContributionCardProps = {
     contribution: Contribution;
 };
 
 
-function ContributionCard({ contribution }: Props) {
+function ContributionCard({ contribution }: ContributionCardProps) {
 
     const formatter = new Intl.DateTimeFormat(undefined, {
         dateStyle: "medium",

@@ -2,6 +2,7 @@ import ContributionCard from "../components/ContributionCard";
 import { getContributions, searchContributions } from "../services/api";
 import { useEffect, useState } from "react";
 import { Contribution } from "../types/types";
+import NavBar from "../components/Navbar";
 import "../styles/Home.css"
 import "../styles/Global.css"
 
@@ -12,19 +13,24 @@ function Home() {
     const [loading, setLoading] = useState(true)
     const [searchQuery, setSearchQuery] = useState("");
 
+    const loadContributions = async () => {
+        try {
+            setContributions(await getContributions());
+        } catch (err) {
+            console.log(err)
+            setError("Failed to load contributions")
+        } finally {
+            setLoading(false)
+        }
+    };
+
+    const handleReset = () => {
+        setSearchQuery("");
+        setLoading(true);
+        loadContributions();
+    };
 
     useEffect(() => {
-        const loadContributions = async () => {
-            try {
-                setContributions(await getContributions());
-            } catch (err) {
-                console.log(err)
-                setError("Failed to load contributions")
-            } finally {
-                setLoading(false)
-            }
-        };
-
         loadContributions();
     }, []);
 
@@ -49,6 +55,7 @@ function Home() {
 
     return (
         <div className="home">
+            <NavBar onReset={handleReset} />
             <div className="search-section">
                 <form onSubmit={handleSearch} className="search-form">
                     <input

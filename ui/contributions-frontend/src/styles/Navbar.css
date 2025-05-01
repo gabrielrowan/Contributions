@@ -8,3 +8,9 @@
     font-weight: 500;
     font-size: 1.35rem;
 }
+
+.navbar-heading:hover {
+    color: #C80032;
+    cursor: pointer;
+
+}
