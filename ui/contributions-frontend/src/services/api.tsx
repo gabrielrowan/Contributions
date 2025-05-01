@@ -7,7 +7,7 @@ export const getContributions = async (skip: number) => {
 
 }
 
-export const searchContributions = async (query: string, skip: number) => {
+export const searchContributions = async (query: string) => {
     const response = await fetch(`${BASE_URL}/contributions/?title=${encodeURIComponent(query)}`);
     const data = await response.json();
     return [data.contributions, data.total];

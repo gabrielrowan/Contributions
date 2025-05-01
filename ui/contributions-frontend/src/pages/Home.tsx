@@ -53,7 +53,7 @@ function Home() {
         setCurrentPage(1)
 
         try {
-            const [searchResults, total] = await searchContributions(searchQuery, skipNum)
+            const [searchResults, total] = await searchContributions(searchQuery)
             setTotalPages(Math.ceil(total / 12))
             setContributions(searchResults)
             setError(null)
