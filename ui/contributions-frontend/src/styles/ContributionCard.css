@@ -1,0 +1,49 @@
+.contribution-card {
+    border: solid lightgrey 0.05px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.contribution-title {
+    font-size: 1.5rem;
+}
+
+.contribution-owner {
+    background-color: black;
+    color: white;
+    padding: 0.45rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+}
+
+.contribution-title-section {
+    border-bottom: 1px solid;
+}
+
+.pill {
+    padding: 0.45rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+}
+
+.owner-status-section {
+    justify-content: space-between;
+}
+
+.contribution-status.scheduled {
+    background-color: #CEDFE4;
+}
+
+.contribution-status.active {
+    background-color: #C80032;
+}
+
+.contribution-status.complete {
+    background-color: #CEDFE4;
+}
+
+.contribution-owner-status-section {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
