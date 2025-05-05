@@ -20,7 +20,7 @@ Technologies used for front-end: **React with TypeScript**
 
 - Desktop and Mobile Figma wireframe available at https://www.figma.com/community/file/1499509174681533912/contributions-arqiva
 
-For example:
+Wireframe extract:
 ![Screenshot 2025-04-30 215602](https://github.com/user-attachments/assets/52adc746-ea95-4ab0-b638-f7e887c017b3)
 
 
