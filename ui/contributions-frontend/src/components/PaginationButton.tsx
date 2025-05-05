@@ -12,4 +12,4 @@ function PaginationButton({ pageNum, handlePageClick, isActive }: PaginationButt
     )
 }
 
-export default PaginationButton
+export default PaginationButton;

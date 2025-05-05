@@ -4,6 +4,7 @@ type NavBarProps = {
     onReset: () => void;
 }
 
+// When navbar heading is clicked, page resets to show all initial contributions and all pages
 function NavBar({ onReset }: NavBarProps) {
     return (
         <div className="navbar">
@@ -13,4 +14,4 @@ function NavBar({ onReset }: NavBarProps) {
 
 }
 
-export default NavBar
+export default NavBar;
