@@ -6,6 +6,7 @@ Technologies used for front-end: **React with TypeScript**
 - How to run project
 - Wireframe Design
 - Colors & Fonts
+- Responsiveness
 
 ## How to run project
 
@@ -27,4 +28,10 @@ For example:
 
 The colours and font for this design mirror the colours and font used on the Arqiva website
 
+## Responsiveness
+
+Video of web app responsiveness, going from mobile to desktop 
+
+
+https://github.com/user-attachments/assets/0636dc44-4fb5-440d-af3c-3163bf65a6ef
 
