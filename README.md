@@ -32,6 +32,9 @@ The colours and font for this design mirror the colours and font used on the Arq
 
 To return to the unfiltered results homepage view after typing in a search term in the search bar, click on the navbar heading
 
+https://github.com/user-attachments/assets/236fa94c-5c0a-46a8-86db-92fd4e8f5ea1
+
+
 ## Responsiveness
 
 Video of web app responsiveness, going from mobile to desktop 
