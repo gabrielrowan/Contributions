@@ -15,8 +15,7 @@ Technologies used for front-end: **React with TypeScript**
 - Open second terminal, change directory into the `ui/contributions-frontend` directory
 - Run command `npm run dev`
 
-After searching, you can click on the Contributions navbar heading to return the the unfiltered results view
-
+To return to the unfiltered results after typing in a search term in the search bar, click on the navbar heading
   
 ## Wireframe
 
