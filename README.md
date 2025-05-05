@@ -30,7 +30,7 @@ The colours and font for this design mirror the colours and font used on the Arq
 
 ## Search 
 
-To return to the unfiltered results after typing in a search term in the search bar, click on the navbar heading
+To return to the unfiltered results homepage view after typing in a search term in the search bar, click on the navbar heading
 
 ## Responsiveness
 
