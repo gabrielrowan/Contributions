@@ -6,6 +6,7 @@ Technologies used for front-end: **React with TypeScript**
 - How to run project
 - Wireframe Design
 - Colors & Fonts
+- Search
 - Responsiveness
 
 ## How to run project
@@ -14,8 +15,6 @@ Technologies used for front-end: **React with TypeScript**
 - Open terminal, change directory into the `server` folder and [follow instructions to run server](https://github.com/arqiva-cs/fe-tech-test/blob/main/server/README.md)
 - Open second terminal, change directory into the `ui/contributions-frontend` directory
 - Run command `npm run dev`
-
-To return to the unfiltered results after typing in a search term in the search bar, click on the navbar heading
   
 ## Wireframe
 
@@ -28,6 +27,10 @@ Wireframe extract:
 ## Colours & Fonts
 
 The colours and font for this design mirror the colours and font used on the Arqiva website
+
+## Search 
+
+To return to the unfiltered results after typing in a search term in the search bar, click on the navbar heading
 
 ## Responsiveness
 
