@@ -1,4 +1,4 @@
-# Contributions - Front End Technical Assessment
+# Contributions - Front End Project
 
 Technologies used for front-end: **React with TypeScript**
 
