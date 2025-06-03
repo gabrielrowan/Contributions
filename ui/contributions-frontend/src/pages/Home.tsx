@@ -19,12 +19,12 @@ function Home() {
     const [currentPageNum, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
-    //gets up to 12 contributions at a time from contributions api so that 12 entries are displayed per page
+    //gets up to 14 contributions at a time from contributions api so that 14 entries are displayed per page
     const loadContributions = async () => {
         try {
             const [contributions, total] = await getContributions(skipNum);
             setContributions(contributions);
-            setTotalPages(Math.ceil(total / 12))
+            setTotalPages(Math.ceil(total / 14))
         } catch (err) {
             console.log(err)
             setError("Failed to load contributions")
@@ -33,7 +33,7 @@ function Home() {
         }
     };
 
-    // resets the page to fetch the first 12 contributions without filtering by search term
+    // resets the page to fetch the first 14 contributions without filtering by search term
     // this allows the user to go back to being able to view all results after searching
     const handleReset = () => {
         setSearchQuery("");
@@ -43,8 +43,8 @@ function Home() {
         setCurrentPage(1)
     };
 
-    // each time skipNum is updated (this happens on page change), a new api call is made to fetch 12 contributions using a different offset
-    // for example, the first api call fetches entries 1-12, whereas changing to page 2 will fetch entries 13-24
+    // each time skipNum is updated (this happens on page change), a new api call is made to fetch 14 contributions using a different offset
+    // for example, the first api call fetches entries 1-14, whereas changing to page 2 will fetch entries 15-28
     useEffect(() => {
         loadContributions();
     }, [skipNum]);
@@ -62,7 +62,7 @@ function Home() {
 
         try {
             const [searchResults, total] = await searchContributions(searchQuery)
-            setTotalPages(Math.ceil(total / 12))
+            setTotalPages(Math.ceil(total / 14))
             setContributions(searchResults)
             setError(null)
         } catch (err) {
@@ -76,7 +76,7 @@ function Home() {
     // on each page change, set the current page number and new offset value for retrieving contributions from the api
     const handlePageChange = (pageNum: number) => {
         setCurrentPage(pageNum);
-        setSkipNum((pageNum - 1) * 12);
+        setSkipNum((pageNum - 1) * 14);
     };
 
     // dynamically display different html content based on: 
